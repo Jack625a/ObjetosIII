@@ -42,6 +42,24 @@ public class Prueba{
         String nuevoInstituto=instituto.replace("Catec","Ucatec");
         System.out.println(nuevoInstituto);
 
+        //Operadores de Comparación (TRUE - FALSE)
+        //1. Igual a (==)
+        System.out.println(numero==numero2);
+        //2. Mayor que > >=
+        System.out.println(numero>numero2);
+        //3. Menor que < <=
+        System.out.println(numero<numero2);
+        //4. Distinto que !=
+        System.out.println(numero!=numero2);
+
+        //Operadores Logicos (TRUE - FALSE)
+        //1. y &&
+        System.out.println(numero==numero2 && numero>=numero2);
+        //2. o ||
+        //3. not !
+
+
+
 
 
     }
