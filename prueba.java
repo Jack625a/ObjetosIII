@@ -1,8 +1,7 @@
 //Entrada de datos
 //Paso1. Importar la clase SCANNER
 import java.util.Scanner;
-//Paso 2. Crear la instancia de la clase SCANNER
-Scanner scanner=new Scanner(System.in);
+
 
 
 //Definir la clase principal
@@ -127,6 +126,19 @@ public class Prueba{
 
 
         //Entradad de datos
+        //Paso 2. Crear la instancia de la clase SCANNER
+        Scanner scanner=new Scanner(System.in);
+        //Paso 3. Leer Datos de entrdada
+        //1. nextInt() Lee un numero entero
+        //2. nextDouble() Lee un numero decimal
+        //3. nextLine() Lee una cadena de carater
+    
+
+        //Paso 4. Probar la lectura de datos
+        int numero1=scanner.nextInt();
+        int numero3=scanner.nextInt();
+        int sumar=numero1+numero3;
+        System.out.println("La suma de "+numero1+"+"+numero3+"="+sumar);
 
 
 
