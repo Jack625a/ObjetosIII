@@ -1,3 +1,10 @@
+//Entrada de datos
+//Paso1. Importar la clase SCANNER
+import java.util.Scanner;
+//Paso 2. Crear la instancia de la clase SCANNER
+Scanner scanner=new Scanner(System.in);
+
+
 //Definir la clase principal
 public class Prueba{
     public static void main(String[]args){
@@ -58,7 +65,68 @@ public class Prueba{
         //2. o ||
         //3. not !
 
+        //Operadores de Asignacion
+        //1. a+=b => a=a+b
+        //2. a++ => a=a+1
+        //3. a-- => a=a-1
 
+        //Condicionales
+        //1. Condicionales IF if(condicion)
+        int edad=12;
+        if (edad>=18){
+            //Que realizara en la respuesta verdadera
+            System.out.println("ES MAYOR DE EDAD");
+        }else{
+            System.out.println("NO ES MAYOR DE EDAD");
+        }
+        //2. Condicionales if else
+
+        //3. Condicionales switch
+        //Menu para Calculadora Basica
+        //Suma, Resta, Division, Multiplicacion
+        String opcion="Sum";
+        switch (opcion){
+            case "Suma":
+                //SUMA
+                System.out.println("Selecciona la Suma");
+                break;
+            case "Resta":
+                //RESTA
+                System.out.println("Selecciono la Resta");
+                break;
+            case "Division":
+                //Division
+                System.out.println("Selecciono la division");
+                break;
+            case "Multiplicacion":
+                //Multiplicacion
+                System.out.println("Selecciono la multiplicacion ");
+            default:
+                System.out.println("Opereacion no valida");
+
+        }
+
+        //Bucles 
+        // Bucles Iterativos for
+        for (int i=1; i<=10; i++){
+            //Codigo a mostrar
+            System.out.println(i);
+        }
+        //Bucles repetitivos while
+        int contador=1;
+        while (contador<=10){
+            System.out.println(contador); 
+            contador++;
+        }
+        //Bucles Repetivos do while
+        int cont=1;
+        do{
+            System.out.println(cont);
+            cont++;
+        }while (cont<=10);
+
+
+        //Entradad de datos
 
 
 
