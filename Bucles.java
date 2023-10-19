@@ -81,10 +81,35 @@ public class Bucles {
             System.out.println(i);
         }
 
-        //Ejercicio 9. Factorial de un numero con el bucle for
+        //Ejercicio 9. Factorial de un numero ingresado por teclado con el bucle for
+        System.out.println("Ejercicio 9. Factorial de un numero ingresado por teclado con el bucle for");
+        Scanner scanner4=new Scanner(System.in);
+        System.out.print("Ingrese un numero: ");
+        int b=scanner4.nextInt();
+        int factorial=1;
+        for (int i=1;i<=b;i++){
+            factorial*=i;
+        }
+        System.out.println("El factorial de "+b+" es "+ factorial);
 
-        
-        
+
+
+        //Ejercicio 10. Factorial de un numero ingresado por teclado con el bucle WHILE
+        //Ejercicio 11- MOSTRAR LA SERIE DE FIBONACCI CON EL BUCLE FOR
+        System.out.println("Ejercicio 11- MOSTRAR LA SERIE DE FIBONACCI CON EL BUCLE FOR");
+        System.out.print("Ingrese un numero para la serie de fibonacci: ");
+        int fn=scanner.nextInt(); //Numero que se ingresara por teclado
+        int f0=0;
+        int f1=1;
+        System.out.println("La Serie de Fibonacci: "+ f0+"+"+f1);
+        for(int i=2; i<=fn;i++){
+            int fs=f0+f1;
+            System.out.println(f0+"+"+f1+"="+fs);
+            f0=f1;
+            f1=fs;
+
+        }
+        //Ejercicio 12- MOSTRA LA SERIE DE FIBONACCI CON EL BUCLE WHILE
     }
     
 }
