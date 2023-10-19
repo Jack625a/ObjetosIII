@@ -75,14 +75,14 @@ public class Bucles {
             System.out.println(a);
             a+=2;
         }
-        //Ejercicio 8. Mostrar los numero impares del 1 al 50 con el bucle for
+        //Ejercicio 8. .Mostrar los numero impares del 1 al 50 con el bucle for
         System.out.println("Ejercicio 8. Mostrar los numero impares del 1 al 50 con el bucle for");
         for(int i=1;i<=50;i+=2){
             System.out.println(i);
         }
 
         //Ejercicio 9. Factorial de un numero con el bucle for
-        
+
         
         
     }
