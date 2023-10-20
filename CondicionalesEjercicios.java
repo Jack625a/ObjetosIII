@@ -1,5 +1,8 @@
+//import java.util.Scanner;
+
 import java.util.Scanner;
-public class Condicionales {
+
+public class CondicionalesEjercicios {
     
     public static void main(String[] args){
          //Ejercicio 1. Obtener el mayor de 2 numero ingresados por teclado
