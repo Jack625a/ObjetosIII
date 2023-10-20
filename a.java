@@ -37,5 +37,36 @@ public class a {
          }else{
             System.out.println("El numero mayor es: "+numero3);
          }
+
+         //Ejercicio 3. Mostrar un mensaje por dia, de Lunes a Domingo 
+         //7 dias - Mensajes
+        System.out.println("Ejercicio 3. Mostrar un mensaje por dia, de Lunes a Domingo ");
+        System.out.print("Ingrese un dia de la semana: ");
+        int dia=scanner.nextInt();
+        switch(dia){
+         case 1:
+         System.out.println("Dia lunes");
+         break;
+         case 2:
+         System.out.println("Dia Martes");
+         break;
+         case 3:
+         System.out.println("Dia miercoles");
+         break;
+         case 4:
+         System.out.println("Dia Jueves");
+         break;
+         case 5:
+         System.out.println("Dia Viernes");
+         break;
+         case 6:
+         System.out.println("Dia Sabado");
+         break;
+         case 7:
+         System.out.println("Dia Domingo");
+         break;
+         default:
+         System.out.println("Dia no valido");
+        }
     }
 }
