@@ -18,9 +18,14 @@ public class metodos {
     int suma=sumar(8, 15);
     int a=sumar(6, 7);
 
-    public static void main(String[]args){
-    
-        
+    //Metodos Estaticos
+    public static int restar(int a, int b){
+        return a-b;
     }
-   
+    int resta=restar(4, 74);
+
+    //Metodos de Instancias
+     public void bienvenidas(String nombre){
+        System.out.println("Hola bienvenido "+nombre);
+    }
 }
