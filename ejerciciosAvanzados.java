@@ -4,6 +4,7 @@ public class ejerciciosAvanzados {
     public static void main(String[]args){
         //Condicionales - Metodos
         //Ejercicio 1- Calcular el Factorial
+        serieFibonacci(20);
         System.out.println("Ejercicio 1- Calcular el Factorial");
         Scanner scanner=new Scanner(System.in);
         System.out.print("Ingrese un numero: ");
@@ -38,7 +39,13 @@ public class ejerciciosAvanzados {
        System.out.print("Ingrese un numero para mostrar la tabla de multiplicar: ");
        int numero2=scanner.nextInt();
        tablaMultiplicar(numero2);
+       tablaMultiplicar(8);
 
+       ////Ejercicio 4 - Serie de Fibonacci con Metodo y bucle iterativo
+       System.out.println("Ejercicio 4 - Serie de Fibonacci con Metodo y bucle iterativo");
+       System.out.print("Ingrese un numero par la serie de fibonacci: ");
+       int numero3=scanner.nextInt();
+       serieFibonacci(numero3);
 
 
 
@@ -60,5 +67,18 @@ public class ejerciciosAvanzados {
             System.out.println(n1+"x"+i+"= "+resultado);   
         }
         return resultado;
+    }
+    //Ejercicio 4 - Serie de Fibonacci con Metodo y bucle iterativo
+    public static int serieFibonacci(int n2){
+        int a=0;
+        int b=1;
+        int s=0;
+        for(int i=1;i<=n2;i++){
+            s=a+b;
+            System.out.println(a+"+"+b+"="+s);
+            a=b;
+            b=s;
+        }
+        return s;
     }
 }
