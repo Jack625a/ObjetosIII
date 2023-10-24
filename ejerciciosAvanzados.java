@@ -33,7 +33,15 @@ public class ejerciciosAvanzados {
         }
         System.out.println("El numero mayor es: "+ mayor);
         System.out.println("El numero menor es: "+ menor);
-        
+       //Ejercicio 3 - Tabla de Multiplicar con Metodo y bucle
+       System.out.println("Ejercicio 3 - Tabla de Multiplicar de n");
+       System.out.print("Ingrese un numero para mostrar la tabla de multiplicar: ");
+       int numero2=scanner.nextInt();
+       tablaMultiplicar(numero2);
+
+
+
+
     }
         //Condicionales - Metodos
         //Ejercicio 1- Calcular el Factorial
@@ -44,6 +52,13 @@ public class ejerciciosAvanzados {
             return n*factorial(n-1);
         }
     }
-    //Bucles - Metodos - Condicionales
-    //Ejercicio 2- Obtener le mayor menor de una lista
+    //Ejercicio 3 - Tabla de Multiplicar Metodo y bucle
+    public static int tablaMultiplicar(int n1){
+        int resultado=0;
+        for(int i=1;i<=10;i++){
+            resultado=n1*i;
+            System.out.println(n1+"x"+i+"= "+resultado);   
+        }
+        return resultado;
+    }
 }
