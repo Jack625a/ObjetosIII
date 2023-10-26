@@ -64,7 +64,7 @@ class Operaciones extends Cajero{
         System.out.print("Ingrese su pin de acceso: ");
         int pin1=scanner.nextInt();
 
-        if (cuenta1==titular && pin1==pin) {
+        if (pin1==pin) {
             System.out.println("Bienvenido "+ titular);
             System.out.println("1. Ver Saldo");
             System.out.println("2. Depositar");
@@ -107,6 +107,20 @@ public class EjercicioHerencia {
         //usuario1.verSaldo();
         //usuario1.depositar(500);
         //usuario1.retirar(2000);
+        Scanner scanner1=new Scanner(System.in);
+        CuentaCliente cliente1=new CuentaCliente("Kevin Arroyo", 100, 7854, 7542498, "a@gmail.com");
+        Operaciones cliente=new Operaciones("Kevin Arroyo", 100, 7854);
+        while (true) {
+            System.out.print("Desea continuar con las opciones? 1. continuar 2. salir");
+            int seleccion=scanner1.nextInt();
+            if (seleccion==1) {
+                cliente.autentificacion(cliente1.titularCuenta,cliente1.pinAcceso);  
+            }else if (seleccion==2) {
+                System.out.println("Gracias por utilizar el servicio....");
+            }else{
+                System.out.println("Operacion no valida");
+            }
+        }
         
     }
 }
