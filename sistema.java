@@ -6,11 +6,9 @@ import java.util.Scanner;
 class Estudiantes{
     private String nombre;
     private Map<String,Integer> materias=new HashMap<>(); //Diccionario de Materias
-    
     public Estudiantes(String nombre) {
         this.nombre=nombre;
     }
-    
     //Crear los metodos
     public void inscribirMateria(String materia){
         materias.put(materia, 0);
@@ -26,41 +24,66 @@ class Estudiantes{
     }
 }
 
+//clase prueba
+
+class Est{
+    private String nombre;
+    private Map<String,Integer>materias=new HashMap<>();
+
+    public Est(String nombre){
+        this.nombre=nombre;
+    }
+    //Crear los metodos
+    public void inscribirMateria2(String materia){
+        materias.put(materia, 0);
+    }
+    public void darExamen2(String materia, int nota){
+        materias.put(materia, nota);
+    }
+    public String mostrarNombre2(){
+        return nombre;
+    }
+    public Map<String,Integer> mostrarNotas2(){
+        return materias;
+    }
+}
+
+
 //Clase Docente
 class Docente{
     private String nombre;
-    private Map<String, Estudiantes> aprobados=new HashMap<>(); //Diccionario para Estudiantes Aprobados
-    private Map<String,Estudiantes> reprobados=new HashMap<>(); //Diccionario para Estudiantes Reprobados
+    private Map<String, Est> aprobados=new HashMap<>(); //Diccionario para Estudiantes Aprobados
+    private Map<String,Est> reprobados=new HashMap<>(); //Diccionario para Estudiantes Reprobados
 
     public Docente(String nombre){
         this.nombre=nombre;
     }
     //Crear los metodos de DOCENTE
-    public void evaluarNotas(String materia, Map<String, Estudiantes> estudiantes){
-        for(Estudiantes estudiante:estudiantes.values()){
-            int nota=estudiante.mostrarNotas().get(materia);
+    public void evaluarNotas(String materia, Map<String, Est> estudiantes){
+        for(Est estudiante:estudiantes.values()){
+            int nota=estudiante.mostrarNotas2().get(materia);
             if(nota>=61){
-                aprobados.put(estudiante.mostrarNombre(),estudiante);
+                aprobados.put(estudiante.mostrarNombre2(),estudiante);
             }else{
-                reprobados.put(estudiante.mostrarNombre(),estudiante);
+                reprobados.put(estudiante.mostrarNombre2(),estudiante);
             }
         }
     }
     //Metodo para mostar las lista de aprobados
-    public Map<String, Estudiantes> mostrarAprobados(){
+    public Map<String, Est> mostrarAprobados(){
         return aprobados;
     }
     //Metodo para mostrar la lista de reprobados
-    public Map<String, Estudiantes> mostrarReprobados(){
+    public Map<String, Est> mostrarReprobados(){
         return reprobados;
     }
 }
 
 
-public class sistemaCatec {
+public class sistema {
     public static void main(String[] args) {
         //Crear el diccionario para estudiantes
-        Map<String, Estudiantes> estudiantes=new HashMap<>();
+        Map<String, Est> estudiantes=new HashMap<>();
         Map<String, Docente> docentes=new HashMap<>();
         Scanner scanner=new Scanner(System.in);
         while (true) {
@@ -79,9 +102,12 @@ public class sistemaCatec {
             switch (opcion) {
                 case 1:
                     System.out.print("Ingrese el nombre del estudiante: ");
-                    String nombreE=scanner.next();
-                    Estudiantes nuevoEstudiante=new Estudiantes(nombreE);
-                    System.out.println(nuevoEstudiante);
+                    String nombreEstudiante=scanner.next();
+                    Est nuevo=new Est(nombreEstudiante);
+                    estudiantes.put(nombreEstudiante, nuevo);
+                    //System.out.println(nuevo.mostrarNombre2());
+                    //Estudiantes nuevoEstudiante=new Estudiantes(nombreEstudiante);
+                    //System.out.println(nuevoEstudiante);
                     //estudiantes.put(nombreE, nuevoEstudiante);
                     break;
                 case 2:
@@ -101,7 +127,7 @@ public class sistemaCatec {
                     System.out.print("Ingrese la materia a asignar: ");
                     String materia2=scanner.next();
                     if(estudiantes.containsKey(nombreEstudiante2)){
-                        estudiantes.get(nombreEstudiante2).inscribirMateria(materia2);
+                        estudiantes.get(nombreEstudiante2).inscribirMateria2(materia2);
                     }else{
                         System.out.println("Estudiante no registrado...");
                     }
@@ -113,7 +139,7 @@ public class sistemaCatec {
                     System.out.print("Ingrese la materia: ");
                     String materia3=scanner.next();
                     int nota=0;
-                    if(estudiantes.containsKey(nombreEstudiante3)&& estudiantes.get(nombreEstudiante3).mostrarNotas().containsKey(materia3)){
+                    if(estudiantes.containsKey(nombreEstudiante3)&& estudiantes.get(nombreEstudiante3).mostrarNotas2().containsKey(materia3)){
                         //Verificacion de la existencia del estudiante y su materia asignada.
                         System.out.println("***Examen "+materia3+" ****");
                         System.out.println("Cual es la clase para crear diccionarios?");
@@ -125,7 +151,7 @@ public class sistemaCatec {
                         System.out.print("Seleccione la respuesta correcta: ");
                         int p1=scanner.nextInt();
                         if(p1==2){
-                            nota=+20;
+                            nota=nota+20;
                         }
                         System.out.println("***Examen "+materia3+" ****");
                         System.out.println("Cual es la clase para crear diccionarios?");
@@ -137,7 +163,7 @@ public class sistemaCatec {
                         System.out.print("Seleccione la respuesta correcta: ");
                         int p2=scanner.nextInt();
                         if(p2==2){
-                            nota=+20;
+                            nota=nota+20;
                         }
                         System.out.println("***Examen "+materia3+" ****");
                         System.out.println("Cual es la clase para crear diccionarios?");
@@ -149,7 +175,7 @@ public class sistemaCatec {
                         System.out.print("Seleccione la respuesta correcta: ");
                         int p3=scanner.nextInt();
                         if(p3==2){
-                            nota=+20;
+                           nota=nota+20;
                         }
                         System.out.println("***Examen "+materia3+" ****");
                         System.out.println("Cual es la clase para crear diccionarios?");
@@ -161,7 +187,7 @@ public class sistemaCatec {
                         System.out.print("Seleccione la respuesta correcta: ");
                         int p4=scanner.nextInt();
                         if(p4==2){
-                            nota=+20;
+                            nota=nota+20;
                         }
                         System.out.println("***Examen "+materia3+" ****");
                         System.out.println("Cual es la clase para crear diccionarios?");
@@ -173,11 +199,11 @@ public class sistemaCatec {
                         System.out.print("Seleccione la respuesta correcta: ");
                         int p5=scanner.nextInt();
                         if(p5==2){
-                            nota=+20;
+                            nota=nota+20;
                         }
 
                         System.out.println("La nota final es: "+nota);
-                        estudiantes.get(nombreEstudiante3).darExamen(materia3,nota);
+                        estudiantes.get(nombreEstudiante3).darExamen2(materia3,nota);
                         
 
                     }else{
