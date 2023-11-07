@@ -26,9 +26,6 @@ class Estudianteee extends Personaa{
     }
 }
 
-
-
-
 public class ejercicioHerencia2 {
     public static void main(String[] args) {
         Personaa estudiante1=new Estudianteee("Kevin", 758412, "Sistemas Informaticos");
